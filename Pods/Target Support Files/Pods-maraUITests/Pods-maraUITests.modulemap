@@ -1,0 +1,6 @@
+framework module Pods_maraUITests {
+  umbrella header "Pods-maraUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
