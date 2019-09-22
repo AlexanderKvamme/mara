@@ -16,6 +16,10 @@ extension UIColor {
         static let warningColor = UIColor.hex("FFBF2F")
         static let errorColor = UIColor.hex("d6292b")
         static let backgroundColor = UIColor.hex("F8F9FB")
+
+        static let softYellow = UIColor.hex("FFE59D")
+        static let softCyan = UIColor.hex("BBF4E7")
+        static let softPink = UIColor.hex("FFC4E6")
     }
     
     static func hex(_ hex:String) -> UIColor {

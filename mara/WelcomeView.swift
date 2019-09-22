@@ -23,7 +23,6 @@ final class WelcomeUserView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setup()
         addSubviewsAndConstraints()
     }
     
@@ -32,11 +31,7 @@ final class WelcomeUserView: UIView {
     }
     
     // MARK: Private methods
-    
-    private func setup() {
-        backgroundColor = .green
-    }
-    
+
     private func addSubviewsAndConstraints() {
         addSubview(welcomeLabel)
         welcomeLabel.snp.makeConstraints { (make) in
@@ -50,17 +45,16 @@ final class WelcomeUserView: UIView {
             make.left.equalTo(welcomeLabel)
             make.right.equalToSuperview()
         }
+        
+        snp.makeConstraints { (make) in
+            make.bottom.equalTo(nameLabel)
+        }
     }
     
     override var intrinsicContentSize: CGSize {
         let height = welcomeLabel.frame.height + nameLabel.frame.height
         return CGSize(width: max(welcomeLabel.frame.width, nameLabel.frame.width), height: height)
     }
-    
-    // MARK: Helper methods
-    
-    // MARK: Internal methods
-
 }
 
 extension UILabel {

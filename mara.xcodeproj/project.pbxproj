@@ -18,6 +18,11 @@
 		DD5A6DDB2336D1CB00D4F9FA /* ff-din-round-black.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD5A6DD62336D1CB00D4F9FA /* ff-din-round-black.otf */; };
 		DD5A6DDC2336D1CB00D4F9FA /* ff-din-round-light.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD5A6DD72336D1CB00D4F9FA /* ff-din-round-light.otf */; };
 		DD5A6DDD2336D1CB00D4F9FA /* ff-din-round-regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD5A6DD82336D1CB00D4F9FA /* ff-din-round-regular.otf */; };
+		DD5A6DDF2336D4AE00D4F9FA /* MyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5A6DDE2336D4AE00D4F9FA /* MyTableViewController.swift */; };
+		DD5A6DE12336D50F00D4F9FA /* DataSourceAndDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5A6DE02336D50F00D4F9FA /* DataSourceAndDelegate.swift */; };
+		DD5A6DE32336D60700D4F9FA /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5A6DE22336D60700D4F9FA /* MyCell.swift */; };
+		DD5A6DE52337AF3700D4F9FA /* GroupSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5A6DE42337AF3700D4F9FA /* GroupSectionHeader.swift */; };
+		DD5A6DE72338060100D4F9FA /* PercentageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5A6DE62338060100D4F9FA /* PercentageView.swift */; };
 		DDAF701A232585D800A6AF48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAF7019232585D800A6AF48 /* AppDelegate.swift */; };
 		DDAF701C232585D800A6AF48 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAF701B232585D800A6AF48 /* MainViewController.swift */; };
 		DDAF7021232585DA00A6AF48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDAF7020232585DA00A6AF48 /* Assets.xcassets */; };
@@ -78,6 +83,11 @@
 		DD5A6DD62336D1CB00D4F9FA /* ff-din-round-black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ff-din-round-black.otf"; sourceTree = "<group>"; };
 		DD5A6DD72336D1CB00D4F9FA /* ff-din-round-light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ff-din-round-light.otf"; sourceTree = "<group>"; };
 		DD5A6DD82336D1CB00D4F9FA /* ff-din-round-regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ff-din-round-regular.otf"; sourceTree = "<group>"; };
+		DD5A6DDE2336D4AE00D4F9FA /* MyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewController.swift; sourceTree = "<group>"; };
+		DD5A6DE02336D50F00D4F9FA /* DataSourceAndDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceAndDelegate.swift; sourceTree = "<group>"; };
+		DD5A6DE22336D60700D4F9FA /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
+		DD5A6DE42337AF3700D4F9FA /* GroupSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSectionHeader.swift; sourceTree = "<group>"; };
+		DD5A6DE62338060100D4F9FA /* PercentageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageView.swift; sourceTree = "<group>"; };
 		DDAF7016232585D800A6AF48 /* mara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mara.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDAF7019232585D800A6AF48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDAF701B232585D800A6AF48 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +167,7 @@
 			children = (
 				DDAF704E23258B2F00A6AF48 /* RecentExperiencesView.swift */,
 				DDAF705123258C6600A6AF48 /* UpCountingLabel.swift */,
+				DD5A6DE62338060100D4F9FA /* PercentageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -164,6 +175,7 @@
 		DDAF700D232585D800A6AF48 = {
 			isa = PBXGroup;
 			children = (
+				DD5A6DE42337AF3700D4F9FA /* GroupSectionHeader.swift */,
 				DDAF7018232585D800A6AF48 /* mara */,
 				DDAF702D232585DA00A6AF48 /* maraTests */,
 				DDAF7038232585DA00A6AF48 /* maraUITests */,
@@ -189,6 +201,9 @@
 				DDAF701B232585D800A6AF48 /* MainViewController.swift */,
 				DDAF7019232585D800A6AF48 /* AppDelegate.swift */,
 				DD5A6DCC2336AB9A00D4F9FA /* OverviewController.swift */,
+				DD5A6DDE2336D4AE00D4F9FA /* MyTableViewController.swift */,
+				DD5A6DE02336D50F00D4F9FA /* DataSourceAndDelegate.swift */,
+				DD5A6DE22336D60700D4F9FA /* MyCell.swift */,
 				DD5A6DD02336B96900D4F9FA /* WelcomeView.swift */,
 				DD5A6DCB23368FC700D4F9FA /* Views */,
 				DDAF704C232588F300A6AF48 /* Extensions */,
@@ -513,11 +528,16 @@
 			files = (
 				DDAF705223258C6600A6AF48 /* UpCountingLabel.swift in Sources */,
 				DDAF70492325864A00A6AF48 /* RateItem.swift in Sources */,
+				DD5A6DE12336D50F00D4F9FA /* DataSourceAndDelegate.swift in Sources */,
 				DDAF701C232585D800A6AF48 /* MainViewController.swift in Sources */,
+				DD5A6DDF2336D4AE00D4F9FA /* MyTableViewController.swift in Sources */,
 				DD5A6DCF2336AD5A00D4F9FA /* UIImageExtensions.swift in Sources */,
 				DD5A6DD12336B96900D4F9FA /* WelcomeView.swift in Sources */,
 				DDAF701A232585D800A6AF48 /* AppDelegate.swift in Sources */,
+				DD5A6DE72338060100D4F9FA /* PercentageView.swift in Sources */,
+				DD5A6DE52337AF3700D4F9FA /* GroupSectionHeader.swift in Sources */,
 				DDAF704B232588EF00A6AF48 /* UIColorExtensions.swift in Sources */,
+				DD5A6DE32336D60700D4F9FA /* MyCell.swift in Sources */,
 				DD5A6DCD2336AB9A00D4F9FA /* OverviewController.swift in Sources */,
 				DDAF704F23258B2F00A6AF48 /* RecentExperiencesView.swift in Sources */,
 			);

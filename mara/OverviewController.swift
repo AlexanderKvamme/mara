@@ -9,13 +9,62 @@
 import Foundation
 import UIKit
 
+final class TableViewHeader: UIView {
+    
+    // MARK: Properties
+    
+    static var size = CGSize(width: Screen.width, height: 200)
+    
+    private let searchButton = UIButton()
+    private let welcomeUserView = WelcomeUserView()
+    
+    // MARK: Initializers
+    
+    override init(frame: CGRect) {
+        super.init(frame: CGRect(origin: .zero, size: TableViewHeader.size))
+        
+        setup()
+        addSubviewsAndConstraints()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: Private methods
+    
+    private func setup() {
+        searchButton.setImage(UIImage.iconSearch, for: .normal)
+    }
+    
+    private func addSubviewsAndConstraints() {
+        addSubview(searchButton)
+        addSubview(welcomeUserView)
+        
+        searchButton.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(48)
+            make.bottom.equalTo(welcomeUserView.snp.bottom)
+            make.height.width.equalTo(24)
+        }
+
+        welcomeUserView.snp.makeConstraints { (make) in
+            make.top.equalTo(snp.top).offset(80)
+            make.right.equalToSuperview().offset(-24)
+        }
+    }
+    
+    // MARK: Helper methods
+    
+    // MARK: Internal methods
+    
+}
 
 final class OverviewController: UIViewController {
 
     // MARK: - Properties
-    
-    private let searchButton = UIButton()
-    private let welcomeUserView = WelcomeUserView()
+
+    private let tableView = MyTableViewController()
+    private let dataSourceAndDelegate = DataSourceAndDelegate()
     
     // MARK: Initializers
     
@@ -33,24 +82,23 @@ final class OverviewController: UIViewController {
     // MARK: Methods
     
     private func setup() {
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor.mara.backgroundColor
         
-        searchButton.setImage(UIImage.iconSearch, for: .normal)
+        tableView.tableHeaderView = TableViewHeader()
     }
     
     private func addSubviewsAndConstraints() {
-        view.addSubview(searchButton)
-        searchButton.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(48)
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(48)
-            make.height.width.equalTo(32)
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints { (make) in
+            make.top.equalTo(view.snp.top)
+            make.left.right.equalToSuperview()
+            make.bottom.equalToSuperview()
         }
         
-        view.addSubview(welcomeUserView)
-        welcomeUserView.snp.makeConstraints { (make) in
-            make.top.equalTo(view.safeAreaInsets.top).offset(80)
-            make.right.equalToSuperview().offset(-24)
-        }
+        tableView.backgroundColor = .white
+        tableView.dataSource = dataSourceAndDelegate
+        tableView.delegate = dataSourceAndDelegate
+        tableView.contentInsetAdjustmentBehavior = .never
     }
 }
 
