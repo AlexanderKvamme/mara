@@ -14,7 +14,7 @@ final class GroupSectionHeader: UIView {
     
     // MARK: Properties
     
-    static var size = CGSize(width: Screen.width, height: 140)
+    static var size = CGSize(width: Device.width, height: 140)
     
     private let header = UILabel.sectionHeader
     private var colorView = UIView.obtuseView
@@ -38,41 +38,45 @@ final class GroupSectionHeader: UIView {
         separator.backgroundColor = .black
         separator.alpha = 0.05
         separator.layer.cornerRadius = 5
-        
-        
     }
     
     private func addSubviewsAndConstraints() {
         let horizontalInsets = 16
         
         addSubview(header)
+        addSubview(colorView)
+        sendSubviewToBack(colorView)
+        addSubview(categoryIcon)
+        addSubview(separator)
+        
         header.snp.makeConstraints { (make) in
             make.bottom.equalToSuperview().offset(-16)
             make.left.equalToSuperview().offset(32)
+            make.right.equalTo(categoryIcon.snp.left).offset(-8)
         }
         
-        addSubview(colorView)
+        header.adjustsFontSizeToFitWidth = true
+        
         colorView.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(-24)
             make.bottom.equalTo(header.snp.bottom)
             make.width.equalTo(160)
             make.height.equalTo(24)
         }
-        sendSubviewToBack(colorView)
         
-        addSubview(categoryIcon)
         categoryIcon.snp.makeConstraints { (make) in
             make.right.equalToSuperview().offset(-40)
-            make.bottom.equalTo(header).offset(-8)
+            make.bottom.equalTo(header).offset(-2)
+            make.size.equalTo(24)
         }
         
-        addSubview(separator)
         separator.snp.makeConstraints { (make) in
             make.height.equalTo(5)
             make.bottom.equalToSuperview()
             make.left.equalToSuperview().offset(horizontalInsets)
             make.right.equalToSuperview().offset(-horizontalInsets)
         }
+        
         separator.alpha = 0
     }
     
@@ -98,6 +102,7 @@ extension UILabel {
     static var sectionHeader: UILabel {
         let label = UILabel()
         label.font = UIFont.din(weight: .bold, size: 24)
+        label.textColor = .black
         return label
     }
 }

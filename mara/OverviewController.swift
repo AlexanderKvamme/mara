@@ -13,7 +13,7 @@ final class TableViewHeader: UIView {
     
     // MARK: Properties
     
-    static var size = CGSize(width: Screen.width, height: 200)
+    static var size = CGSize(width: Device.width, height: Device.hasNotch ? 200 : 100)
     
     private let searchButton = UIButton()
     private let welcomeUserView = WelcomeUserView()
@@ -42,21 +42,18 @@ final class TableViewHeader: UIView {
         addSubview(welcomeUserView)
         
         searchButton.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(48)
-            make.bottom.equalTo(welcomeUserView.snp.bottom)
+            let leftInset = Device.hasNotch ? 48 : 32
+            make.left.equalToSuperview().offset(leftInset)
+            make.bottom.equalTo(welcomeUserView.snp.bottom).offset(-4)
             make.height.width.equalTo(24)
         }
 
         welcomeUserView.snp.makeConstraints { (make) in
-            make.top.equalTo(snp.top).offset(80)
+            let topOffset = Device.hasNotch ? 80 : 32
+            make.top.equalTo(snp.top).offset(topOffset)
             make.right.equalToSuperview().offset(-24)
         }
     }
-    
-    // MARK: Helper methods
-    
-    // MARK: Internal methods
-    
 }
 
 final class OverviewController: UIViewController {

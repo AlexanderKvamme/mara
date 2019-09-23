@@ -65,6 +65,7 @@ extension UILabel {
         label.alpha = 0.3
         label.font = UIFont(name: "DINRoundPro-Medi", size: 16)
         label.textAlignment = .right
+        label.textColor = .black
         return label
     }
     
@@ -73,6 +74,7 @@ extension UILabel {
         label.text = "Alexander"
         label.font = UIFont(name: "DINRoundPro-Medi", size: 32)
         label.textAlignment = .right
+        label.textColor = .black
         return label
     }
 }

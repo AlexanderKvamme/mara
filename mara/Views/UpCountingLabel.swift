@@ -23,6 +23,7 @@ final class UpCountingLabel: UILabel {
         super.init(frame: .zero)
         
         font = UIFont(name: "Nunito-Regular", size: 60)
+        textColor = .black
         textAlignment = .center
         text = "0"
     }

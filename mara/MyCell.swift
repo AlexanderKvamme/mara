@@ -51,7 +51,7 @@ final class MyCell: UITableViewCell {
     
     private let headerLabel = UILabel()
     private let numberLabel = UILabel()
-    private let percentageView = PercentageView(frame: CGRect(x: 0, y: 0, width: Screen.width - 64, height: 20))
+    private let percentageView = PercentageView(frame: CGRect(x: 0, y: 0, width: Device.width - 64, height: 20))
     
     // MARK: Initializers
     
@@ -63,8 +63,10 @@ final class MyCell: UITableViewCell {
         headerLabel.text = "hello"
         headerLabel.font = UIFont.din(weight: .medium, size: 24)
         headerLabel.alpha = 0.2
+        headerLabel.textColor = .black
         
         numberLabel.text = "48"
+        numberLabel.textColor = .black
         numberLabel.font = UIFont.din(weight: .black, size: 36)
         
         contentView.addSubview(headerLabel)

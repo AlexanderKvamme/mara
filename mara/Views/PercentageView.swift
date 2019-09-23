@@ -87,7 +87,7 @@ final class PercentageView: UIView {
                                               height: self.filledPortion.frame.height)
             
             let newWidth = self.maxWidth - self.width(for: rating) - 10
-            self.unfilledPortion.frame = CGRect(x: Screen.width-PercentageView.insets*2 - newWidth, y: 0,
+            self.unfilledPortion.frame = CGRect(x: Device.width-PercentageView.insets*2 - newWidth, y: 0,
                                                 width: newWidth,
                                                 height: self.unfilledPortion.frame.height)
             
@@ -97,11 +97,11 @@ final class PercentageView: UIView {
     }
     
     var maxWidth: CGFloat {
-        return Screen.width - 2*PercentageView.insets
+        return Device.width - 2*PercentageView.insets
     }
     
     private func width(for rating: Rating) -> CGFloat {
-        let max = Screen.width - 2*PercentageView.insets
+        let max = Device.width - 2*PercentageView.insets
         return max/100*CGFloat(rating)
     }
 }

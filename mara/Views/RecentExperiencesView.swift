@@ -17,6 +17,7 @@ final class HeaderLabel: UILabel {
         super.init(frame: frame)
 
         font = UIFont(name: "Nunito-Bold", size: 32)
+        textColor = .black
     }
     
     required init?(coder aDecoder: NSCoder) {

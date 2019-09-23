@@ -9,9 +9,10 @@
 import Foundation
 import UIKit
 
-final class Screen {
+final class Device {
     static let height = UIScreen.main.bounds.height
     static let width = UIScreen.main.bounds.width
+    static let hasNotch = { return (UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0) > 0 }()
 }
 
 final class DataSourceAndDelegate: NSObject, UITableViewDataSource, UITableViewDelegate {
