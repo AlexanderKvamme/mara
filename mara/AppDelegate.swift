@@ -7,23 +7,39 @@
 //
 
 import UIKit
+import SQLite
+import SwiftyBeaver
+
+// MARK: Global properties
+
+let log = SwiftyBeaver.self
+let inDebugMode = true
+
+// MARK: AppDelegate
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    // MARK: Properties
+    
     var window: UIWindow?
+    let database = SQLiteService()
 
+    // MARK: Methods
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let initialViewController = OverviewController()
+        setInitialScreen(OverviewController())
+        
+        return true
+    }
+    
+    private func setInitialScreen(_ initialViewController: UIViewController) {
         let win = UIWindow(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         win.rootViewController = initialViewController
         window = win
         window?.makeKeyAndVisible()
-        
-        return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

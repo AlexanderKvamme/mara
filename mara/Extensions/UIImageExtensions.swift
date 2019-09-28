@@ -13,4 +13,5 @@ import UIKit
 extension UIImage {
     static var iconCoffee = UIImage(named: "icon-coffee")!
     static var iconSearch = UIImage(named: "icon-search")!
+    static var buttonPlus = UIImage(named: "button-plus")!
 }

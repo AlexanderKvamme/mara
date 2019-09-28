@@ -51,7 +51,54 @@ final class DataSourceAndDelegate: NSObject, UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return GroupSectionHeader.size.height
     }
+    
+    // Footers
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footer = Footer()
+        return footer
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return GroupSectionHeader.size.height
+    }
 }
 
-
-
+final class Footer: UIView {
+    
+    // MARK: Properties
+    
+    // MARK: Initializers
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        setup()
+        addSubviewsAndConstraints()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: Private methods
+    
+    private func setup() {
+        
+    }
+    
+    private func addSubviewsAndConstraints() {
+        let image = UIImageView.with(image: .buttonPlus)
+        
+        addSubview(image)
+        image.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview().offset(-16)
+        }
+    }
+    
+    // MARK: Helper methods
+    
+    // MARK: Internal methods
+    
+}

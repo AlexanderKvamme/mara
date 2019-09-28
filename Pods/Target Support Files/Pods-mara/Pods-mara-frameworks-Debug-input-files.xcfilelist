@@ -1,2 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-mara/Pods-mara-frameworks.sh
+${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework
 ${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
+${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework

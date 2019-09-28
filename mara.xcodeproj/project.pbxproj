@@ -10,6 +10,9 @@
 		0EF6786779A3724B064A352C /* Pods_maraUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34FCD3212188FDD139915FCA /* Pods_maraUITests.framework */; };
 		68B26E86D44E7C4DD166CC7E /* Pods_mara.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C08F7E6494A098EF97996158 /* Pods_mara.framework */; };
 		84A0D73B531FC364FDE86F93 /* Pods_maraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BAE142020F11B44CED81EB9 /* Pods_maraTests.framework */; };
+		DD26B63A233A92B300C2C338 /* NewRatingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD26B639233A92B300C2C338 /* NewRatingController.swift */; };
+		DD26B63D233D555E00C2C338 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD26B63C233D555E00C2C338 /* PersistenceService.swift */; };
+		DD26B63F233F773300C2C338 /* SQLiteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD26B63E233F773300C2C338 /* SQLiteService.swift */; };
 		DD5A6DCD2336AB9A00D4F9FA /* OverviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5A6DCC2336AB9A00D4F9FA /* OverviewController.swift */; };
 		DD5A6DCF2336AD5A00D4F9FA /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5A6DCE2336AD5A00D4F9FA /* UIImageExtensions.swift */; };
 		DD5A6DD12336B96900D4F9FA /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5A6DD02336B96900D4F9FA /* WelcomeView.swift */; };
@@ -24,7 +27,6 @@
 		DD5A6DE52337AF3700D4F9FA /* GroupSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5A6DE42337AF3700D4F9FA /* GroupSectionHeader.swift */; };
 		DD5A6DE72338060100D4F9FA /* PercentageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5A6DE62338060100D4F9FA /* PercentageView.swift */; };
 		DDAF701A232585D800A6AF48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAF7019232585D800A6AF48 /* AppDelegate.swift */; };
-		DDAF701C232585D800A6AF48 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAF701B232585D800A6AF48 /* MainViewController.swift */; };
 		DDAF7021232585DA00A6AF48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDAF7020232585DA00A6AF48 /* Assets.xcassets */; };
 		DDAF7024232585DA00A6AF48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDAF7022232585DA00A6AF48 /* LaunchScreen.storyboard */; };
 		DDAF702F232585DA00A6AF48 /* maraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAF702E232585DA00A6AF48 /* maraTests.swift */; };
@@ -75,6 +77,9 @@
 		81C05A86B338498C6BFAFE31 /* Pods-maraUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-maraUITests.debug.xcconfig"; path = "Target Support Files/Pods-maraUITests/Pods-maraUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C08F7E6494A098EF97996158 /* Pods_mara.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mara.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0B17324B0655088CA6B1941 /* Pods-maraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-maraTests.debug.xcconfig"; path = "Target Support Files/Pods-maraTests/Pods-maraTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DD26B639233A92B300C2C338 /* NewRatingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRatingController.swift; sourceTree = "<group>"; };
+		DD26B63C233D555E00C2C338 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		DD26B63E233F773300C2C338 /* SQLiteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteService.swift; sourceTree = "<group>"; };
 		DD5A6DCC2336AB9A00D4F9FA /* OverviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewController.swift; sourceTree = "<group>"; };
 		DD5A6DCE2336AD5A00D4F9FA /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		DD5A6DD02336B96900D4F9FA /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -90,7 +95,6 @@
 		DD5A6DE62338060100D4F9FA /* PercentageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageView.swift; sourceTree = "<group>"; };
 		DDAF7016232585D800A6AF48 /* mara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mara.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDAF7019232585D800A6AF48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DDAF701B232585D800A6AF48 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DDAF7020232585DA00A6AF48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDAF7023232585DA00A6AF48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDAF7025232585DA00A6AF48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -162,6 +166,36 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		DD26B637233A90E800C2C338 /* Tables */ = {
+			isa = PBXGroup;
+			children = (
+				DD5A6DE22336D60700D4F9FA /* MyCell.swift */,
+				DD5A6DDE2336D4AE00D4F9FA /* MyTableViewController.swift */,
+				DD5A6DE02336D50F00D4F9FA /* DataSourceAndDelegate.swift */,
+				DD5A6DE42337AF3700D4F9FA /* GroupSectionHeader.swift */,
+			);
+			name = Tables;
+			sourceTree = "<group>";
+		};
+		DD26B638233A911A00C2C338 /* Login screen */ = {
+			isa = PBXGroup;
+			children = (
+				DD5A6DCC2336AB9A00D4F9FA /* OverviewController.swift */,
+				DD26B639233A92B300C2C338 /* NewRatingController.swift */,
+				DD5A6DD02336B96900D4F9FA /* WelcomeView.swift */,
+			);
+			path = "Login screen";
+			sourceTree = "<group>";
+		};
+		DD26B63B233D553B00C2C338 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				DD26B63C233D555E00C2C338 /* PersistenceService.swift */,
+				DD26B63E233F773300C2C338 /* SQLiteService.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
 		DD5A6DCB23368FC700D4F9FA /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,7 +209,6 @@
 		DDAF700D232585D800A6AF48 = {
 			isa = PBXGroup;
 			children = (
-				DD5A6DE42337AF3700D4F9FA /* GroupSectionHeader.swift */,
 				DDAF7018232585D800A6AF48 /* mara */,
 				DDAF702D232585DA00A6AF48 /* maraTests */,
 				DDAF7038232585DA00A6AF48 /* maraUITests */,
@@ -198,13 +231,10 @@
 		DDAF7018232585D800A6AF48 /* mara */ = {
 			isa = PBXGroup;
 			children = (
-				DDAF701B232585D800A6AF48 /* MainViewController.swift */,
+				DD26B63B233D553B00C2C338 /* Persistence */,
 				DDAF7019232585D800A6AF48 /* AppDelegate.swift */,
-				DD5A6DCC2336AB9A00D4F9FA /* OverviewController.swift */,
-				DD5A6DDE2336D4AE00D4F9FA /* MyTableViewController.swift */,
-				DD5A6DE02336D50F00D4F9FA /* DataSourceAndDelegate.swift */,
-				DD5A6DE22336D60700D4F9FA /* MyCell.swift */,
-				DD5A6DD02336B96900D4F9FA /* WelcomeView.swift */,
+				DD26B638233A911A00C2C338 /* Login screen */,
+				DD26B637233A90E800C2C338 /* Tables */,
 				DD5A6DCB23368FC700D4F9FA /* Views */,
 				DDAF704C232588F300A6AF48 /* Extensions */,
 				DDAF70472325860F00A6AF48 /* Models */,
@@ -527,10 +557,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDAF705223258C6600A6AF48 /* UpCountingLabel.swift in Sources */,
+				DD26B63F233F773300C2C338 /* SQLiteService.swift in Sources */,
 				DDAF70492325864A00A6AF48 /* RateItem.swift in Sources */,
 				DD5A6DE12336D50F00D4F9FA /* DataSourceAndDelegate.swift in Sources */,
-				DDAF701C232585D800A6AF48 /* MainViewController.swift in Sources */,
 				DD5A6DDF2336D4AE00D4F9FA /* MyTableViewController.swift in Sources */,
+				DD26B63D233D555E00C2C338 /* PersistenceService.swift in Sources */,
 				DD5A6DCF2336AD5A00D4F9FA /* UIImageExtensions.swift in Sources */,
 				DD5A6DD12336B96900D4F9FA /* WelcomeView.swift in Sources */,
 				DDAF701A232585D800A6AF48 /* AppDelegate.swift in Sources */,
@@ -540,6 +571,7 @@
 				DD5A6DE32336D60700D4F9FA /* MyCell.swift in Sources */,
 				DD5A6DCD2336AB9A00D4F9FA /* OverviewController.swift in Sources */,
 				DDAF704F23258B2F00A6AF48 /* RecentExperiencesView.swift in Sources */,
+				DD26B63A233A92B300C2C338 /* NewRatingController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

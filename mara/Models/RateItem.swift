@@ -8,29 +8,34 @@
 
 import Foundation
 
-typealias Rating = Int
+typealias Rating = Int64
+
+// MARK: - RateItem
 
 struct RateItem {
     var title: String
+    var id: Int64?
     var rating: Rating
+    var dateCreated: Date
 //    var category: RateGroup
     
-    static var mock = RateItem(title: "Mock Title", rating: 50)
-    static var mocks = [RateItem(title: "Mock Title 1", rating: 40),
-                           RateItem(title: "Mock Title 2", rating: 60),
-                           RateItem(title: "Mock Title 3", rating: 80)]
+    static var mock = RateItem(title: "En ting", rating: 50, dateCreated: Date())
+    static var mocks = [RateItem(title: "En annen ting", rating: 40, dateCreated: Date()),
+                           RateItem(title: "Flere ting", rating: 60, dateCreated: Date()),
+                           RateItem(title: "Siste ting", rating: 80, dateCreated: Date())]
 }
+
+// MARK: - RateGroup
 
 struct RateGroup {
     var title: String
     var items: [RateItem]
     
     static var mock = RateGroup(title: "Mock Group Title", items: [])
-    static var mocks = [RateGroup(title: "First Mock Group Title", items: RateItem.mocks),
-                        RateGroup(title: "Second Mock Group Title", items: RateItem.mocks),
-                        RateGroup(title: "Second Mock Group Title", items: RateItem.mocks)]
+    static var mocks = [RateGroup(title: "Lett international", items: RateItem.mocks),
+                        RateGroup(title: "McDonalds hamburgers", items: RateItem.mocks),
+                        RateGroup(title: "Internasjonale nudler", items: RateItem.mocks)]
     
-    private static var mockItems = [RateItem(title: "Item 1", rating: 11)]
+    private static var mockItems = [RateItem(title: "Item 1", rating: 11, dateCreated: Date())]
 }
-
 
