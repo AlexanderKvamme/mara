@@ -10,6 +10,8 @@
 		0EF6786779A3724B064A352C /* Pods_maraUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34FCD3212188FDD139915FCA /* Pods_maraUITests.framework */; };
 		68B26E86D44E7C4DD166CC7E /* Pods_mara.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C08F7E6494A098EF97996158 /* Pods_mara.framework */; };
 		84A0D73B531FC364FDE86F93 /* Pods_maraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BAE142020F11B44CED81EB9 /* Pods_maraTests.framework */; };
+		DD0FC351234A1656007BECF3 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FC350234A1656007BECF3 /* Router.swift */; };
+		DD0FC353234A2CBE007BECF3 /* Navbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FC352234A2CBE007BECF3 /* Navbar.swift */; };
 		DD26B63A233A92B300C2C338 /* NewRatingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD26B639233A92B300C2C338 /* NewRatingController.swift */; };
 		DD26B63D233D555E00C2C338 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD26B63C233D555E00C2C338 /* PersistenceService.swift */; };
 		DD26B63F233F773300C2C338 /* SQLiteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD26B63E233F773300C2C338 /* SQLiteService.swift */; };
@@ -77,6 +79,8 @@
 		81C05A86B338498C6BFAFE31 /* Pods-maraUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-maraUITests.debug.xcconfig"; path = "Target Support Files/Pods-maraUITests/Pods-maraUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C08F7E6494A098EF97996158 /* Pods_mara.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mara.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0B17324B0655088CA6B1941 /* Pods-maraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-maraTests.debug.xcconfig"; path = "Target Support Files/Pods-maraTests/Pods-maraTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DD0FC350234A1656007BECF3 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		DD0FC352234A2CBE007BECF3 /* Navbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navbar.swift; sourceTree = "<group>"; };
 		DD26B639233A92B300C2C338 /* NewRatingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRatingController.swift; sourceTree = "<group>"; };
 		DD26B63C233D555E00C2C338 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		DD26B63E233F773300C2C338 /* SQLiteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteService.swift; sourceTree = "<group>"; };
@@ -191,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				DD26B63C233D555E00C2C338 /* PersistenceService.swift */,
+				DD0FC350234A1656007BECF3 /* Router.swift */,
 				DD26B63E233F773300C2C338 /* SQLiteService.swift */,
 			);
 			path = Persistence;
@@ -202,6 +207,7 @@
 				DDAF704E23258B2F00A6AF48 /* RecentExperiencesView.swift */,
 				DDAF705123258C6600A6AF48 /* UpCountingLabel.swift */,
 				DD5A6DE62338060100D4F9FA /* PercentageView.swift */,
+				DD0FC352234A2CBE007BECF3 /* Navbar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -231,8 +237,8 @@
 		DDAF7018232585D800A6AF48 /* mara */ = {
 			isa = PBXGroup;
 			children = (
-				DD26B63B233D553B00C2C338 /* Persistence */,
 				DDAF7019232585D800A6AF48 /* AppDelegate.swift */,
+				DD26B63B233D553B00C2C338 /* Persistence */,
 				DD26B638233A911A00C2C338 /* Login screen */,
 				DD26B637233A90E800C2C338 /* Tables */,
 				DD5A6DCB23368FC700D4F9FA /* Views */,
@@ -559,6 +565,7 @@
 				DDAF705223258C6600A6AF48 /* UpCountingLabel.swift in Sources */,
 				DD26B63F233F773300C2C338 /* SQLiteService.swift in Sources */,
 				DDAF70492325864A00A6AF48 /* RateItem.swift in Sources */,
+				DD0FC353234A2CBE007BECF3 /* Navbar.swift in Sources */,
 				DD5A6DE12336D50F00D4F9FA /* DataSourceAndDelegate.swift in Sources */,
 				DD5A6DDF2336D4AE00D4F9FA /* MyTableViewController.swift in Sources */,
 				DD26B63D233D555E00C2C338 /* PersistenceService.swift in Sources */,
@@ -566,6 +573,7 @@
 				DD5A6DD12336B96900D4F9FA /* WelcomeView.swift in Sources */,
 				DDAF701A232585D800A6AF48 /* AppDelegate.swift in Sources */,
 				DD5A6DE72338060100D4F9FA /* PercentageView.swift in Sources */,
+				DD0FC351234A1656007BECF3 /* Router.swift in Sources */,
 				DD5A6DE52337AF3700D4F9FA /* GroupSectionHeader.swift in Sources */,
 				DDAF704B232588EF00A6AF48 /* UIColorExtensions.swift in Sources */,
 				DD5A6DE32336D60700D4F9FA /* MyCell.swift in Sources */,
@@ -742,6 +750,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RMURDMDZGD;
 				INFOPLIST_FILE = mara/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -749,7 +758,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = HomeOfficesInternational.mara;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -761,6 +770,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RMURDMDZGD;
 				INFOPLIST_FILE = mara/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -768,7 +778,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = HomeOfficesInternational.mara;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

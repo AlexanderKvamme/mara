@@ -12,7 +12,13 @@ import UIKit
 final class Device {
     static let height = UIScreen.main.bounds.height
     static let width = UIScreen.main.bounds.width
-    static let hasNotch = { return (UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0) > 0 }()
+    static var hasNotch: Bool = {
+        UIApplication.shared.windows.filter{$0.isKeyWindow}.first!.safeAreaInsets.top > 20
+    }()
+    
+    static let notchHeight: CGFloat = {
+        return UIApplication.shared.windows.filter{$0.isKeyWindow}.first!.safeAreaInsets.top
+    }()
 }
 
 final class DataSourceAndDelegate: NSObject, UITableViewDataSource, UITableViewDelegate {
@@ -68,6 +74,8 @@ final class Footer: UIView {
     
     // MARK: Properties
     
+    private var plusButton = UIButton(frame: .zero)
+    
     // MARK: Initializers
     
     override init(frame: CGRect) {
@@ -83,22 +91,24 @@ final class Footer: UIView {
     
     // MARK: Private methods
     
+    @objc
+    private func showNewRatingPage() {
+        let newRatingController = NewRatingController()
+        Router.push(newRatingController)
+    }
+    
     private func setup() {
-        
+        plusButton.addTarget(self, action: #selector(showNewRatingPage), for: .touchUpInside)
     }
     
     private func addSubviewsAndConstraints() {
-        let image = UIImageView.with(image: .buttonPlus)
-        
-        addSubview(image)
-        image.snp.makeConstraints { (make) in
+        let plusIcon = UIImage.buttonPlus
+        plusButton.setImage(plusIcon, for: .normal)
+        addSubview(plusButton)
+        plusButton.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview().offset(-16)
         }
     }
-    
-    // MARK: Helper methods
-    
-    // MARK: Internal methods
-    
 }
+

@@ -138,12 +138,14 @@ final class SQLiteService: PersistenceService {
     func dump() {
         do {
             let stmt = try database.run("SELECT * FROM rateitems")
-            stmt.forEach({ log.debug("logging rateitem: \($0)") })
+            stmt.forEach({
+                print("Dumping rateitem: \($0)")
+            })
         } catch let error {
             log.error(error)
         }
     }
-    
+        
     // MARK: - Static methods
     
     fileprivate static func deserialize(_ UTCdateString: String?) -> Date? {

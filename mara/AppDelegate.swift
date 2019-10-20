@@ -14,6 +14,7 @@ import SwiftyBeaver
 
 let log = SwiftyBeaver.self
 let inDebugMode = true
+let database = SQLiteService()
 
 // MARK: AppDelegate
 
@@ -23,22 +24,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: Properties
     
     var window: UIWindow?
-    let database = SQLiteService()
+    
 
     // MARK: Methods
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        setInitialScreen(OverviewController())
+        makeWindow()
+        Router.push(OverviewController())
         
         return true
     }
     
-    private func setInitialScreen(_ initialViewController: UIViewController) {
-        let win = UIWindow(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
-        win.rootViewController = initialViewController
-        window = win
+    private func makeWindow() {
+        let screenSize = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        window = UIWindow(frame: screenSize)
+        window?.rootViewController = Router.navigationController
         window?.makeKeyAndVisible()
     }
 
@@ -63,7 +65,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
 
 }
 

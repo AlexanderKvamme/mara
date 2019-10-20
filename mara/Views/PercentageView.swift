@@ -17,8 +17,9 @@ final class PercentageView: UIView {
     static let insets: CGFloat = 32
     private let filledPortion = UIView()
     private let unfilledPortion = UIView()
-    
     private var rating: Rating?
+    
+    private weak var delegate: RatingSliderDelegate?
     
     // MARK: Initializers
     
@@ -52,8 +53,6 @@ final class PercentageView: UIView {
     
     func set(_ rating: Rating) {
         self.rating = rating
-        
-        #warning("clean or remove me")
         
         let width: CGFloat               = frame.size.width
         let percentageInWidth: CGFloat   = width/100*CGFloat(rating)
@@ -104,4 +103,56 @@ final class PercentageView: UIView {
         let max = Device.width - 2*PercentageView.insets
         return max/100*CGFloat(rating)
     }
+}
+
+// MARK: - Interactive
+
+extension PercentageView {
+    func addTouchFunctionality(withDelegate value: RatingSliderDelegate) {
+        delegate = value
+        
+        let panRecognizer = InstantPanGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
+        addGestureRecognizer(panRecognizer)
+    }
+    
+    @objc func handleSwipe(_ sender: UISwipeGestureRecognizer) {
+        // delegate didStart or didEnd cases
+        switch sender.state {
+        case .began:
+            delegate?.ratingSwipeDidBegin?()
+        case .ended:
+            delegate?.ratingSwipeDidEnd?()
+        default:
+            break
+        }
+        
+        // get swipe location
+        var location = sender.location(in: self)
+        location.x = max(location.x, 0)
+        location.x = min(location.x, frame.width)
+        
+        // calculate percentage
+        let percentage = location.x/frame.width
+        let rating = Int64(percentage*100)
+
+        delegate?.ratingDidChange(to: rating)
+    }
+}
+
+
+@objc protocol RatingSliderDelegate: class {
+    func ratingDidChange(to rating: Rating)
+    @objc optional func ratingSwipeDidBegin()
+    @objc optional func ratingSwipeDidEnd()
+}
+
+
+fileprivate class InstantPanGestureRecognizer: UIPanGestureRecognizer {
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent) {
+        if (self.state == UIGestureRecognizer.State.began) { return }
+        super.touchesBegan(touches, with: event)
+        self.state = UIGestureRecognizer.State.began
+    }
+
 }
